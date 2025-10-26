@@ -1,0 +1,14 @@
+{
+  "1": {
+    "name": "Kai/解",
+    "position": "Founder of the Open Innovation Collective HARMONY連.",
+    "pfp_link": "https://avatars.githubusercontent.com/u/94761175",
+    "public_keys": [
+      {
+        "format": "PEM",
+        "algorithm": "ed25519",
+        "key": "MCowBQYDK2VwAyEAp0i+SdJPCDmmvGnUcFJmNQrWk9jk0pwCHAOtCMRv4sU="
+      }
+    ]
+  }
+}

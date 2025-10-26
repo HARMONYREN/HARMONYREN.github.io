@@ -1,0 +1,17 @@
+.member-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.member-content {
+  flex: 1;
+}
+
+.member-card img {
+  border-radius: 50%;
+  width: 10vw;
+  margin-left: 10px;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/png/ren_light.png" type="image" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/members.css" />
+
+  <title>HARMONY連・For innovation</title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="/assets/svg/harmony_ren_full_logo.svg" alt="HARMONYREN Logo" />
+    </div>
+
+    <ul id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about-us">About Us</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/members">Members</a></li>
+      <li><a href="/contact-us">Contact Us</a></li>
+      <li><a href="/get-involved">Get Involved</a></li>
+    </ul>
+
+    <button class="show-only-mobile">&#x2630;</button>
+  </nav>
+
+
+  <script src="/js/nav-toggle.js"></script>
+
+  <main id="public_keys">
+  </main>
+
+  <div id="public_keys"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const memberId = urlParams.get('id');
+
+      if (!memberId) {
+        console.error('No member ID found in URL');
+        return;
+      }
+
+      fetch('/members/members.json')
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          return response.json();
+        })
+        .then(data => {
+          const main = document.getElementById('public_keys');
+          if (!main) {
+            console.error('Container element #public_keys not found');
+            return;
+          }
+
+          const member = data[memberId];
+          if (!member) {
+            const p = document.createElement('p');
+            p.textContent = `Member with ID ${memberId} not found`;
+            main.appendChild(p);
+            return;
+          }
+
+          const h1 = document.createElement('h1');
+          h1.textContent = `ID: ${memberId}, Name: ${member.name}`;
+          main.appendChild(h1);
+
+          if (Array.isArray(member.public_keys) && member.public_keys.length > 0) {
+            const table = document.createElement('table');
+            table.style.borderCollapse = 'collapse';
+            table.style.width = '100%';
+            table.style.marginTop = '10px';
+
+            const headerRow = document.createElement('tr');
+            ['Algorithm', 'Format', 'Key'].forEach(text => {
+              const th = document.createElement('th');
+              th.textContent = text;
+              th.style.border = '1px solid #ccc';
+              th.style.padding = '8px';
+              th.style.textAlign = 'left';
+              th.style.backgroundColor = '#f2f2f2';
+              headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+            member.public_keys.forEach(keyObj => {
+              const tr = document.createElement('tr');
+              [keyObj.algorithm, keyObj.format, keyObj.key].forEach(value => {
+                const td = document.createElement('td');
+                td.textContent = value;
+                td.style.border = '1px solid #ccc';
+                td.style.padding = '8px';
+                tr.appendChild(td);
+              });
+              table.appendChild(tr);
+            });
+
+            main.appendChild(table);
+          } else {
+            const p = document.createElement('p');
+            p.textContent = 'No public keys found for this member.';
+            main.appendChild(p);
+          }
+        })
+        .catch(err => console.error('Failed to load members:', err));
+    });
+  </script>
+
+
+  <footer>
+    <hr class="footer-separator">
+    <p id="company-info"></p>
+    <script src="/js/company-info.js"></script>
+  </footer>
+
+</body>
+
+</html>
