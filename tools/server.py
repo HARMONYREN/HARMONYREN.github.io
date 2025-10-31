@@ -1,6 +1,8 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import os
 
+os.chdir('./docs')
+
 class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         path = self.path.lstrip('/')
