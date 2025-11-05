@@ -65,7 +65,7 @@
             return;
           }
 
-          const member = data[memberId];
+          const member = data[`${memberId}`];
           if (!member) {
             const p = document.createElement('p');
             p.textContent = `Member with ID ${memberId} not found`;
