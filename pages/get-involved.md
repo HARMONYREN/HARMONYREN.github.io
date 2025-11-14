@@ -12,7 +12,7 @@ Once you have chosen a role, please reach out via [Contact Us](/contact-us) for 
 
 ## Become an Debater
 
-Anyone can observe and submit reviews by obtaining a keypair from [所ID](https://github.com/kai5041/shoid).
+Anyone can observe and submit reviews by obtaining a keypair from [**所ID**](https://github.com/kai5041/shoid).
 
 ---
 
@@ -23,8 +23,8 @@ Anyone interested in becoming an official member of **HARMONY連** can reach out
 If your involvement generates income, a legally binding agreement is required, as all members operate as independent contractors.  
 This agreement must be signed with an **eIDAS-compliant electronic signature**.
 
-**NOTE**: For legal reasons, we currently accept legally contracted members residing in Italy only.  
-We plan to expand internationally in the future with the support of [所ID](https://github.com/kai5041/shoid).
+**Note**: For legal reasons, we currently accept legally contracted members residing in Italy only.  
+We plan to expand internationally in the future with the support of [**所ID**](https://github.com/kai5041/shoid).
 
 ---
 
