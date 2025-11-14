@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="/assets/png/harmony_ren_light.png" type="image">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <title>{{ title }}</title>
+</head>
+<body>
+  {% include "nav.njk" %}
+
+
+  <main>
+  <div style="
+  text-align: center;
+  font-size: calc(1.5rem);
+  font-weight: bold;
+  border: 1px solid var(--text-color);
+  border-radius: 12px;
+  ">
+    <p>WEBSITE CURRENTLY UNDER CONSTRUCTION</p>
+  </div>
+    {{ content | safe }}
+  </main>
+
+  <footer style="text-align: center; font-size: calc(0.9rem)">
+    <p>HARMONY REN・FOR INNOVATION・2025/2025</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+
+:root {
+  font-family: "Noto Serif JP";
+  --text-color: #2A2A2A;
+  --background-color: #FFFFFF;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+a {
+  color: var(--text-color);
+}
+
+main {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  main {
+    width: 95%;
+  }
+}
