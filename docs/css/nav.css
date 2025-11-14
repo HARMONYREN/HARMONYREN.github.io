@@ -3,6 +3,10 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 20px;
+  border: 1px solid var(--text-color);
+  border-top: 0;
+  padding: 5px 20px;
+  text-align: center;
 }
 
 .nav ul {
@@ -25,7 +29,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   #nav-menu {
     display: none;
     flex-direction: column;
